@@ -42,6 +42,7 @@
             // 
             // cb_lowercase
             // 
+            this.cb_lowercase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_lowercase.AutoSize = true;
             this.cb_lowercase.Font = new System.Drawing.Font("Source Sans Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_lowercase.Location = new System.Drawing.Point(236, 64);
@@ -50,10 +51,10 @@
             this.cb_lowercase.TabIndex = 0;
             this.cb_lowercase.Text = "lowercase words";
             this.cb_lowercase.UseVisualStyleBackColor = true;
-            this.cb_lowercase.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // cb_uppercase
             // 
+            this.cb_uppercase.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_uppercase.AutoSize = true;
             this.cb_uppercase.Font = new System.Drawing.Font("Source Sans Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_uppercase.Location = new System.Drawing.Point(236, 125);
@@ -65,6 +66,7 @@
             // 
             // cb_numbers
             // 
+            this.cb_numbers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_numbers.AutoSize = true;
             this.cb_numbers.Font = new System.Drawing.Font("Source Sans Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_numbers.Location = new System.Drawing.Point(236, 186);
@@ -73,10 +75,10 @@
             this.cb_numbers.TabIndex = 2;
             this.cb_numbers.Text = "numbers";
             this.cb_numbers.UseVisualStyleBackColor = true;
-            this.cb_numbers.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // cb_special
             // 
+            this.cb_special.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_special.AutoSize = true;
             this.cb_special.Font = new System.Drawing.Font("Source Sans Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_special.Location = new System.Drawing.Point(236, 247);
@@ -85,10 +87,10 @@
             this.cb_special.TabIndex = 3;
             this.cb_special.Text = "special characters";
             this.cb_special.UseVisualStyleBackColor = true;
-            this.cb_special.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // button_generate
             // 
+            this.button_generate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_generate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_generate.Location = new System.Drawing.Point(525, 412);
             this.button_generate.Name = "button_generate";
@@ -96,9 +98,11 @@
             this.button_generate.TabIndex = 4;
             this.button_generate.Text = "generate";
             this.button_generate.UseVisualStyleBackColor = true;
+            this.button_generate.Click += new System.EventHandler(this.button_generate_Click);
             // 
             // button_copy
             // 
+            this.button_copy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button_copy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_copy.Location = new System.Drawing.Point(407, 412);
             this.button_copy.Name = "button_copy";
@@ -109,6 +113,7 @@
             // 
             // tb_password
             // 
+            this.tb_password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tb_password.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_password.Location = new System.Drawing.Point(153, 412);
             this.tb_password.Name = "tb_password";
@@ -118,6 +123,7 @@
             // 
             // length_of_password
             // 
+            this.length_of_password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.length_of_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.length_of_password.Location = new System.Drawing.Point(422, 326);
             this.length_of_password.Name = "length_of_password";
@@ -128,13 +134,13 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("Source Sans Pro", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(203, 324);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 43);
             this.label1.TabIndex = 8;
             this.label1.Text = "number of digits";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 
@@ -150,6 +156,9 @@
             this.Controls.Add(this.cb_numbers);
             this.Controls.Add(this.cb_uppercase);
             this.Controls.Add(this.cb_lowercase);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Form1";
             this.ShowIcon = false;
