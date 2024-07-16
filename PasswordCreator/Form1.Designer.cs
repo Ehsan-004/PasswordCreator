@@ -114,6 +114,7 @@
             this.button_copy.TabIndex = 5;
             this.button_copy.Text = "copy";
             this.button_copy.UseVisualStyleBackColor = true;
+            this.button_copy.Click += new System.EventHandler(this.button_copy_Click);
             // 
             // tb_password
             // 

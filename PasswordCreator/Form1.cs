@@ -5,7 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,7 +34,6 @@ namespace PasswordCreator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -106,6 +107,8 @@ namespace PasswordCreator
             }
 
             tb_password.Text = password;
+
+            
         }
 
         private void cb_lowercase_CheckedChanged(object sender, EventArgs e)
@@ -154,6 +157,29 @@ namespace PasswordCreator
             {
                 use_chars = false;
             }
+        }
+
+        private void button_copy_Click(object sender, EventArgs e)
+        {
+            if (tb_password.Text == String.Empty)
+            {
+                MessageBox.Show(
+                    "generate a password firs!",
+                    "no password",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
+
+            Clipboard.SetText(tb_password.Text);
+
+            MessageBox.Show(
+                "the password is coppied to your clipboard!",
+                "successfull",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+                );
         }
     }
 }
