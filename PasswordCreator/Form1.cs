@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,13 @@ namespace PasswordCreator
         public char[] uppers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         public char[] numbers = "0123456789".ToCharArray();
         public char[] specialChars = "!@#$%^&*()_+-=[]{}|;:,.<>/?".ToCharArray();
+
+        public List<char> options = new List<char>();
+
+        public bool use_lower = false;
+        public bool use_upper = false;
+        public bool use_numbers = false;
+        public bool use_chars = false;
 
         public Form1()
         {
@@ -34,10 +42,9 @@ namespace PasswordCreator
 
         public static void ShuffleList<T>(List<T> list)
         {
-            // Create a random number generator
+            // AI generated code!
             Random rng = new Random();
 
-            // Shuffle the list using the Fisher-Yates shuffle algorithm
             int n = list.Count;
             while (n > 1)
             {
@@ -51,19 +58,37 @@ namespace PasswordCreator
 
         private void button_generate_Click(object sender, EventArgs e)
         {
-            List<char> options = new List<char>();
-
-            if (cb_lowercase.Checked)
+            if (use_numbers)
+                options.AddRange(numbers);
+            if(use_lower)
                 options.AddRange(lowers);
-
-            if (cb_uppercase.Checked)
+            if (use_upper)
                 options.AddRange(uppers);
-
-            if (cb_special.Checked)
+            if (use_chars)
                 options.AddRange(specialChars);
 
-            if (cb_numbers.Checked)
-                options.AddRange(numbers);
+
+            if (!options.Any())
+            {
+                MessageBox.Show(
+                    "choose at least one type of characters!", 
+                    "no type error", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
+
+            if (Decimal.ToInt32(length_of_password.Value) <= 0)
+            {
+                MessageBox.Show(
+                    "length of password can't be 0!",
+                    "length error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                return;
+            }
 
             string password = "";
 
@@ -80,9 +105,55 @@ namespace PasswordCreator
                 password += options[i];
             }
 
-            //MessageBox.Show(password);
-
             tb_password.Text = password;
+        }
+
+        private void cb_lowercase_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_lowercase.Checked)
+            {
+                use_lower = true;
+            }
+            else
+            {
+                use_lower = false;
+            }
+        }
+
+        private void cb_uppercase_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_uppercase.Checked)
+            {
+                use_upper = true;
+            }
+            else
+            {
+                use_upper = false;
+            }
+        }
+
+        private void cb_numbers_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_numbers.Checked)
+            {
+                use_numbers = true;
+            }
+            else
+            {
+                use_numbers = false;
+            }
+        }
+
+        private void cb_special_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_special.Checked)
+            {
+                use_chars = true;
+            }
+            else
+            {
+                use_chars = false;
+            }
         }
     }
 }

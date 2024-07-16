@@ -51,6 +51,7 @@
             this.cb_lowercase.TabIndex = 0;
             this.cb_lowercase.Text = "lowercase words";
             this.cb_lowercase.UseVisualStyleBackColor = true;
+            this.cb_lowercase.CheckedChanged += new System.EventHandler(this.cb_lowercase_CheckedChanged);
             // 
             // cb_uppercase
             // 
@@ -63,18 +64,20 @@
             this.cb_uppercase.TabIndex = 1;
             this.cb_uppercase.Text = "uppercase words";
             this.cb_uppercase.UseVisualStyleBackColor = true;
+            this.cb_uppercase.CheckedChanged += new System.EventHandler(this.cb_uppercase_CheckedChanged);
             // 
             // cb_numbers
             // 
             this.cb_numbers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_numbers.AutoSize = true;
             this.cb_numbers.Font = new System.Drawing.Font("Source Sans Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_numbers.Location = new System.Drawing.Point(236, 186);
+            this.cb_numbers.Location = new System.Drawing.Point(236, 187);
             this.cb_numbers.Name = "cb_numbers";
             this.cb_numbers.Size = new System.Drawing.Size(173, 46);
             this.cb_numbers.TabIndex = 2;
             this.cb_numbers.Text = "numbers";
             this.cb_numbers.UseVisualStyleBackColor = true;
+            this.cb_numbers.CheckedChanged += new System.EventHandler(this.cb_numbers_CheckedChanged);
             // 
             // cb_special
             // 
@@ -87,6 +90,7 @@
             this.cb_special.TabIndex = 3;
             this.cb_special.Text = "special characters";
             this.cb_special.UseVisualStyleBackColor = true;
+            this.cb_special.CheckedChanged += new System.EventHandler(this.cb_special_CheckedChanged);
             // 
             // button_generate
             // 
